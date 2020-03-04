@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
  
     
-    var data: [String] = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
+    var data: [String] = []
 
     @IBOutlet weak var table: UITableView!
     
@@ -27,6 +27,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.navigationItem.rightBarButtonItem = addbutton
         self.navigationItem.leftBarButtonItem = editButtonItem
         
+        load()
+        
     }
     
     @objc func addNote(){
@@ -36,6 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         let indexPath: IndexPath = IndexPath(row: 0, section: 0)
         table.insertRows(at: [indexPath], with: .automatic)
+        
+        save()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +62,18 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         data.remove(at: indexPath.row)
         table.deleteRows(at: [indexPath], with: .fade)
+        save()
+    }
+    
+    func save() {
+        UserDefaults.standard.set(data, forKey: "notes")
+    }
+    
+    func load() {
+        if let loadedData: [String] = UserDefaults.standard.value(forKey: "notes") as? [String] {
+            data = loadedData
+            table.reloadData()
+        }
     }
     
     
