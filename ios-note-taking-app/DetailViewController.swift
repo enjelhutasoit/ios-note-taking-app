@@ -9,15 +9,24 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var text: String = ""
 
     @IBOutlet weak var textView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.text = "Yeay! New Note success created."
+        textView.text = text
 
-       
+    }
+    
+    func setText(t: String) {
+        text = t
+        if isViewLoaded {
+            textView.text = t
+        }
     }
     
 
