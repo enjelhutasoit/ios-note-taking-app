@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var text: String = ""
+    var masterView: ViewController!
 
     @IBOutlet weak var textView: UITextView!
     
@@ -27,6 +28,12 @@ class DetailViewController: UIViewController {
         if isViewLoaded {
             textView.text = t
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        masterView.newRowText = textView.text
     }
     
 

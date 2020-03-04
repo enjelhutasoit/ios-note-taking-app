@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var data: [String] = []
     var fileURL: URL!
     var selectedRow: Int = -1
+    var newRowText: String = ""
 
     @IBOutlet weak var table: UITableView!
     
@@ -37,9 +38,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if selectedRow == -1 {
+            return
+        }
+        data[selectedRow] = newRowText
+        if newRowText == "" {
+            data.remove(at: selectedRow)
+        }
+        table.reloadData()
+        save()
+    }
+    
+    
     @objc func addNote(){
         if table.isEditing { return }
-        let name: String = "Item \(data.count + 1)"
+        let name: String = ""
         data.insert(name, at: 0)
         
         let indexPath: IndexPath = IndexPath(row: 0, section: 0)
@@ -80,6 +97,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailView: DetailViewController = segue.destination as! DetailViewController
         selectedRow = table.indexPathForSelectedRow!.row
+        detailView.masterView = self
         detailView.setText(t: data[selectedRow])
     }
     
