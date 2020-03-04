@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF6BCAB22410682800FAD347 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6BCAB12410682800FAD347 /* DetailViewController.swift */; };
 		EF7415C9241052D70072410C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7415C8241052D70072410C /* AppDelegate.swift */; };
 		EF7415CB241052D70072410C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7415CA241052D70072410C /* SceneDelegate.swift */; };
 		EF7415CD241052D70072410C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7415CC241052D70072410C /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF6BCAB12410682800FAD347 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EF7415C5241052D70072410C /* ios-note-taking-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-note-taking-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7415C8241052D70072410C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF7415CA241052D70072410C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				EF7415C8241052D70072410C /* AppDelegate.swift */,
 				EF7415CA241052D70072410C /* SceneDelegate.swift */,
 				EF7415CC241052D70072410C /* ViewController.swift */,
+				EF6BCAB12410682800FAD347 /* DetailViewController.swift */,
 				EF7415CE241052D70072410C /* Main.storyboard */,
 				EF7415D1241052D80072410C /* Assets.xcassets */,
 				EF7415D3241052D80072410C /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				EF7415CD241052D70072410C /* ViewController.swift in Sources */,
 				EF7415C9241052D70072410C /* AppDelegate.swift in Sources */,
 				EF7415CB241052D70072410C /* SceneDelegate.swift in Sources */,
+				EF6BCAB22410682800FAD347 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
