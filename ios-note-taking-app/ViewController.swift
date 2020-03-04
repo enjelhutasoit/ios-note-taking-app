@@ -24,8 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         /// Create "Add Bar Button Item"
         let addbutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNote))
-        self.navigationItem.rightBarButtonItem =  addbutton
-        
+        self.navigationItem.rightBarButtonItem = addbutton
+        self.navigationItem.leftBarButtonItem = editButtonItem
         
     }
     
@@ -47,6 +47,19 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
      }
      
+    /// Handle editButtonItem
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        table.setEditing(editing, animated: animated)
+    }
+    
+    // Remove the object from data array
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        data.remove(at: indexPath.row)
+        table.deleteRows(at: [indexPath], with: .fade)
+    }
+    
+    
     
 
 
