@@ -20,11 +20,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         table.dataSource = self
         table.delegate = self
         
         self.title = "Notes"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
         
         /// Create "Add Bar Button Item"
         let addbutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNote))
@@ -117,10 +119,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             table.reloadData()
         }
     }
-    
-    
-    
-
 
 }
 
