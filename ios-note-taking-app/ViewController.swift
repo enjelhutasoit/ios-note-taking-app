@@ -30,6 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     @objc func addNote(){
+        if table.isEditing { return }
         let name: String = "Item \(data.count + 1)"
         data.insert(name, at: 0)
         
